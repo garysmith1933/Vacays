@@ -12,6 +12,7 @@ import {Vacation} from 'src/app/model/vacation';
 import {PurchaseDataService} from "../../services/purchase-data.service";
 import {CustomerDto} from "../../model/dto/customer-dto";
 import {CartItemDto} from "../../model/dto/cart-item-dto";
+import {environment} from "../../../environments/environment";
 
 /**
  * Cart Summary
@@ -27,9 +28,9 @@ import {CartItemDto} from "../../model/dto/cart-item-dto";
 export class CartSummaryComponent implements OnInit {
 
   cartItemsUrl = "";
-  checkoutUrl = "http://localhost:8080/api/checkout/purchase";
-  customerUrl = "http://localhost:8080/api/customers";
-  cartsUrl = "http://localhost:8080/api/carts"
+  checkoutUrl = environment.DB_HOSTNAME + '/api/checkout/purchase' || "http://localhost:8080/api/checkout/purchase";
+  customerUrl = environment.DB_HOSTNAME + '/api/customers' || "http://localhost:8080/api/customers";
+  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts"
   cartId = 0;
 
   cartItems: CartItem[] = [];

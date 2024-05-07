@@ -5,7 +5,7 @@ import com.example.demo.dto.PurchaseResponse;
 import com.example.demo.services.CheckoutService;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = { "http://localhost:4200", "https://vacays-gchr-latest.onrender.com" })
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {

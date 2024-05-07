@@ -10,6 +10,7 @@ import {map} from 'rxjs/operators';
 import {Excursion} from '../../model/excursion';
 import {ExcursionApiResponse} from 'src/app/model/excursion-api-response';
 import {Vacation} from 'src/app/model/vacation';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-excursion',
@@ -18,7 +19,7 @@ import {Vacation} from 'src/app/model/vacation';
 })
 export class ExcursionComponent implements OnInit {
 
-  vacationUrl = 'http://localhost:8080/api/vacations/';
+  vacationUrl = environment.DB_HOSTNAME + '/api/vacations/' || 'http://localhost:8080/api/vacations/';
   excursions: Excursion[] = [];
   vacationId: number = 0;
   vacationTitle: string = ''

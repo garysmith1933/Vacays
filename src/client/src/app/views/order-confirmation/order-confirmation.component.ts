@@ -13,6 +13,7 @@ import {StatusType} from "../../model/StatusType";
 import {VacationDto} from "../../model/dto/vacation-dto";
 import {ExcursionDto} from "../../model/dto/excursion-dto";
 import {CartItemDto} from "../../model/dto/cart-item-dto";
+import {environment} from "../../../environments/environment";
 
 
 @Component({
@@ -23,9 +24,9 @@ import {CartItemDto} from "../../model/dto/cart-item-dto";
 export class OrderConfirmationComponent implements OnInit {
 
   cartItemsUrl = "";
-  checkoutUrl = "http://localhost:8080/api/checkout/purchase";
-  customerUrl = "http://localhost:8080/api/customers/1";
-  cartsUrl = "http://localhost:8080/api/carts";
+  checkoutUrl =  environment.DB_HOSTNAME + '/api/checkout/purchase' || "http://localhost:8080/api/checkout/purchase";
+  customerUrl = environment.DB_HOSTNAME + '/api/customers/1' || "http://localhost:8080/api/customers/1";
+  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts";
   cartId = 0;
 
   cartItems: CartItem[] = [];

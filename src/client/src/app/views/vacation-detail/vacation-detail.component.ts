@@ -14,6 +14,7 @@ import {CartItemDto} from "../../model/dto/cart-item-dto";
 import {PurchaseDto} from "../../model/dto/purchase-dto";
 import {CustomerDto} from "../../model/dto/customer-dto";
 import {CartDto} from "../../model/dto/cart-dto.model";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-vacation-detail',
@@ -22,7 +23,7 @@ import {CartDto} from "../../model/dto/cart-dto.model";
 })
 export class VacationDetailComponent implements OnInit {
 
-  vacationUrl = 'http://localhost:8080/api/vacations';
+  vacationUrl =  environment.DB_HOSTNAME + '/api/vacations' || 'http//localhost:8080/api/vacations';
 
   vacation: Vacation = new Vacation("", "", 0, "", new Date(), new Date(), { self: { href: "" }});
   vacationId: number = 0;

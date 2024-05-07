@@ -10,6 +10,7 @@ import { CountryApiResponse } from 'src/app/model/country-api-response';
 import { Customer } from 'src/app/model/customer';
 import { Division } from 'src/app/model/division';
 import { DivisionApiResponse } from 'src/app/model/division-api-response';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-edit-customer',
@@ -19,9 +20,9 @@ import { DivisionApiResponse } from 'src/app/model/division-api-response';
 
 export class EditCustomerComponent implements OnInit {
 
-  customerUrl = 'http://localhost:8080/api/customers';
-  countryUrl = 'http://localhost:8080/api/countries';
-  divisionUrl = 'http://localhost:8080/api/divisions';
+  customerUrl = environment.DB_HOSTNAME + '/api/customers' || 'http://localhost:8080/api/customers';
+  countryUrl = environment.DB_HOSTNAME + '/api/countries' || 'http://localhost:8080/api/countries';
+  divisionUrl = environment.DB_HOSTNAME + '/api/divisions' || 'http://localhost:8080/api/divisions';
 
   countries: Country[] = [];
   divisions: Division[] = [];

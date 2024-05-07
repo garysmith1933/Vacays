@@ -14,6 +14,7 @@ import {Customer} from 'src/app/model/customer';
 import {PurchaseDataService} from "../../services/purchase-data.service";
 import {CartItemDto} from "../../model/dto/cart-item-dto";
 import {ExcursionDto} from "../../model/dto/excursion-dto";
+import {environment} from "../../../environments/environment";
 
 /**
  * Cart
@@ -27,9 +28,9 @@ import {ExcursionDto} from "../../model/dto/excursion-dto";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartsUrl = "http://localhost:8080/api/carts";
+  cartsUrl =  environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts";
   cartItemsUrl = "";
-  customerUrl = "http://localhost:8080/api/customers/1";
+  customerUrl = environment.DB_HOSTNAME + '/api/customers/1' || "http://localhost:8080/api/customers/1";
 
   cartId = 0;
   cartItems: CartItem[] = [];

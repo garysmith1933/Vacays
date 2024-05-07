@@ -12,6 +12,7 @@ import {PurchaseDataService} from "../../services/purchase-data.service";
 import {Vacation} from "../../model/vacation";
 
 import {ExcursionDto} from "../../model/dto/excursion-dto";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-excursion-detail',
@@ -20,10 +21,10 @@ import {ExcursionDto} from "../../model/dto/excursion-dto";
 })
 export class ExcursionDetailComponent implements OnInit {
 
-  vacationUrl: string = 'http://localhost:8080/api/vacations';
-  excursionsUrl = "http://localhost:8080/api/excursions/";
-  cartItemsUrl: string = 'http://localhost:8080/api/cartItems';
-  cartsUrl = "http://localhost:8080/api/carts";
+  vacationUrl: string = environment.DB_HOSTNAME + '/api/vacations' || 'http://localhost:8080/api/vacations';
+  excursionsUrl = environment.DB_HOSTNAME + '/api/excursions/' || "http://localhost:8080/api/excursions/"
+  cartItemsUrl: string = environment.DB_HOSTNAME + '/api/cartItems' || 'http://localhost:8080/api/cartItems';
+  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts";
   cartUrl: string = '';
   cartId: number = 0;
 

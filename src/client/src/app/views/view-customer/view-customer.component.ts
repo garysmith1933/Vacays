@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 
 import { Customer } from 'src/app/model/customer';
 import { CustomerApiResponse } from 'src/app/model/customer-api-response';
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-view-customer',
@@ -16,7 +17,7 @@ import { CustomerApiResponse } from 'src/app/model/customer-api-response';
 })
 export class ViewCustomerComponent implements OnInit {
 
-  customerUrl = 'http://localhost:8080/api/customers'
+  customerUrl =  environment.DB_HOSTNAME + '/api/customers' || 'http//localhost:8080/api/customers';
 
   customers: Customer[] = [];
 
