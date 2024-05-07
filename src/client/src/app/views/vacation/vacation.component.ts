@@ -15,7 +15,7 @@ import {CartDto} from "../../model/dto/cart-dto.model";
 import {StatusType} from "../../model/StatusType";
 import {CustomerDto} from "../../model/dto/customer-dto";
 import {CustomerApiResponse} from "../../model/customer-api-response";
-
+import {environment} from "../../../environments/environment";
 
 /**
  *
@@ -28,9 +28,9 @@ import {CustomerApiResponse} from "../../model/customer-api-response";
 export class VacationComponent implements OnInit {
 
   // urls
-  vacationUrl = 'http://localhost:8080/api/vacations';
-  cartsUrl = 'http://localhost:8080/api/carts';
-  customerUrl = "http://localhost:8080/api/customers";
+  vacationUrl = environment.DB_HOSTNAME + '/api/vacations' || 'http//localhost:8080/api/vacations';
+  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || 'http//localhost:8080/api/carts';
+  customerUrl = environment.DB_HOSTNAME + '/api/customers' || 'http//localhost:8080/api/customers';
 
   // vacations for the page
   vacations: Vacation[] = [];
