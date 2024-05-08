@@ -22,9 +22,9 @@ import {environment} from "../../../environments/environment";
 })
 export class AddCustomerComponent implements OnInit {
 
-  customerUrl = environment.DB_HOSTNAME + '/api/customers' || 'http://localhost:8080/api/customers';
-  countryUrl = environment.DB_HOSTNAME + '/api/countries' || 'http://localhost:8080/api/countries';
-  divisionUrl = environment.DB_HOSTNAME + '/api/divisions' || 'http://localhost:8080/api/divisions';
+  customerUrl = environment.URL + '/api/customers' || 'http://localhost:8080/api/customers';
+  countryUrl = environment.URL + '/api/countries' || 'http://localhost:8080/api/countries';
+  divisionUrl = environment.URL + '/api/divisions' || 'http://localhost:8080/api/divisions';
 
   countries: Country[] = [];
   divisions: Division[] = [];

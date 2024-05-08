@@ -19,7 +19,7 @@ import {environment} from "../../../environments/environment";
 })
 export class ExcursionComponent implements OnInit {
 
-  vacationUrl = environment.DB_HOSTNAME + '/api/vacations/' || 'http://localhost:8080/api/vacations/';
+  vacationUrl = environment.URL + '/api/vacations/' || 'http://localhost:8080/api/vacations/';
   excursions: Excursion[] = [];
   vacationId: number = 0;
   vacationTitle: string = ''

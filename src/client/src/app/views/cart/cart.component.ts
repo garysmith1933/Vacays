@@ -28,9 +28,9 @@ import {environment} from "../../../environments/environment";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  cartsUrl =  environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts";
+  cartsUrl =  environment.URL + '/api/carts' || "http://localhost:8080/api/carts";
   cartItemsUrl = "";
-  customerUrl = environment.DB_HOSTNAME + '/api/customers/1' || "http://localhost:8080/api/customers/1";
+  customerUrl = environment.URL + '/api/customers/1' || "http://localhost:8080/api/customers/1";
 
   cartId = 0;
   cartItems: CartItem[] = [];

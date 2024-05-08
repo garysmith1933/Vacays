@@ -28,9 +28,9 @@ import {environment} from "../../../environments/environment";
 export class VacationComponent implements OnInit {
 
   // urls
-  vacationUrl = environment.DB_HOSTNAME + '/api/vacations' || 'http//localhost:8080/api/vacations';
-  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || 'http//localhost:8080/api/carts';
-  customerUrl = environment.DB_HOSTNAME + '/api/customers' || 'http//localhost:8080/api/customers';
+  vacationUrl = environment.URL + '/api/vacations' || 'http//localhost:8080/api/vacations';
+  cartsUrl = environment.URL + '/api/carts' || 'http//localhost:8080/api/carts';
+  customerUrl = environment.URL + '/api/customers' || 'http//localhost:8080/api/customers';
 
   // vacations for the page
   vacations: Vacation[] = [];

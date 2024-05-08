@@ -17,7 +17,7 @@ import {environment} from "../../../environments/environment";
 })
 export class ViewCustomerComponent implements OnInit {
 
-  customerUrl =  environment.DB_HOSTNAME + '/api/customers' || 'http//localhost:8080/api/customers';
+  customerUrl =  environment.URL + '/api/customers' || 'http//localhost:8080/api/customers';
 
   customers: Customer[] = [];
 

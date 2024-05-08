@@ -28,9 +28,9 @@ import {environment} from "../../../environments/environment";
 export class CartSummaryComponent implements OnInit {
 
   cartItemsUrl = "";
-  checkoutUrl = environment.DB_HOSTNAME + '/api/checkout/purchase' || "http://localhost:8080/api/checkout/purchase";
-  customerUrl = environment.DB_HOSTNAME + '/api/customers' || "http://localhost:8080/api/customers";
-  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts"
+  checkoutUrl = environment.URL + '/api/checkout/purchase' || "http://localhost:8080/api/checkout/purchase";
+  customerUrl = environment.URL + '/api/customers' || "http://localhost:8080/api/customers";
+  cartsUrl = environment.URL + '/api/carts' || "http://localhost:8080/api/carts"
   cartId = 0;
 
   cartItems: CartItem[] = [];

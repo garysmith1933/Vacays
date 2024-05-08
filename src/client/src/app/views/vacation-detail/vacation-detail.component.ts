@@ -23,7 +23,7 @@ import {environment} from "../../../environments/environment";
 })
 export class VacationDetailComponent implements OnInit {
 
-  vacationUrl =  environment.DB_HOSTNAME + '/api/vacations' || 'http//localhost:8080/api/vacations';
+  vacationUrl =  environment.URL + '/api/vacations' || 'http//localhost:8080/api/vacations';
 
   vacation: Vacation = new Vacation("", "", 0, "", new Date(), new Date(), { self: { href: "" }});
   vacationId: number = 0;

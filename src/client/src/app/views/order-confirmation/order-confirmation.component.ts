@@ -24,9 +24,9 @@ import {environment} from "../../../environments/environment";
 export class OrderConfirmationComponent implements OnInit {
 
   cartItemsUrl = "";
-  checkoutUrl =  environment.DB_HOSTNAME + '/api/checkout/purchase' || "http://localhost:8080/api/checkout/purchase";
-  customerUrl = environment.DB_HOSTNAME + '/api/customers/1' || "http://localhost:8080/api/customers/1";
-  cartsUrl = environment.DB_HOSTNAME + '/api/carts' || "http://localhost:8080/api/carts";
+  checkoutUrl =  environment.URL + '/api/checkout/purchase' || "http://localhost:8080/api/checkout/purchase";
+  customerUrl = environment.URL + '/api/customers/1' || "http://localhost:8080/api/customers/1";
+  cartsUrl = environment.URL + '/api/carts' || "http://localhost:8080/api/carts";
   cartId = 0;
 
   cartItems: CartItem[] = [];
